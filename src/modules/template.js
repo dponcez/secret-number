@@ -56,7 +56,7 @@ export const template = () => {
       <div class="form--container">
         <form action="#" class="form" data-form>
           <input type="number" name="secret number" class="input--field" id="secret-number"
-            placeholder="Escribe tu número..." data-input>
+            placeholder="Type your number..." data-input>
           <button type="submit" class="btn submit--btn">submit</button>
         </form>
         <div class="level--container" data-level>
