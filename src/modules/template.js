@@ -27,8 +27,8 @@ export const template = () => {
         ${loadSVGElement(screen_icon_size)}
       </div>
       <div class="splash--info">
-        <h1 class="title">¡Bienvenido!</h1>
-        <p class="info">un número secreto ha sido escondido. ¿Tienes la agudeza mental para descubrirlo?</p>
+        <h1 class="title">¡Welcome!</h1>
+        <p class="info">a secret number has been hidden. Do you have the mental acuity to figure it out?</p>
       </div>
       <button class="btn start--btn" data-start-game>start</button>
     </div>
@@ -36,20 +36,20 @@ export const template = () => {
       <div class="main--logo">
         ${loadSVGElement(main_icon_size)}
       </div>
-      <strong class="difficulty--info">seleccionar dificultad inicial</strong>
+      <strong class="difficulty--info">select an initial difficulty</strong>
       <div class="hud">
         <div class="difficulty--section">
           <button class="btn difficulty--btn active" data-dif="easy">
-            <span>fácil (1 - 50)</span>
+            <span>easy (1 - 50)</span>
           </button>
           <button class="btn difficulty--btn" data-dif="medium">
-            <span>medio (1 - 150)</span>
+            <span>medium (1 - 150)</span>
           </button>
           <button class="btn difficulty--btn" data-dif="hard">
-            <span>difícil (1 - 500)</span>
+            <span>hard (1 - 500)</span>
           </button>
           <button class="btn difficulty--btn" data-dif="super_hard">
-            <span>súper difícil (1 - 1000)</span>
+            <span>super hard (1 - 1000)</span>
           </button>
         </div>
       </div>
