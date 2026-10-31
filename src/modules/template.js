@@ -30,7 +30,7 @@ export const template = () => {
         <h1 class="title">¡Welcome!</h1>
         <p class="info">a secret number has been hidden. Do you have the mental acuity to figure it out?</p>
       </div>
-      <button class="btn start--btn" data-start-game>start</button>
+      <button class="btn start--btn" data-start-game>start game</button>
     </div>
     <main class="main">
       <div class="main--logo">
