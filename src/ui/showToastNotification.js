@@ -14,7 +14,7 @@ export function showToastNotification(msg, question, attempts, color, timeout, c
 
   inputField.disabled = true;
 
-  states.messageTimer.setTimeout(() => {
+  states.messageTimer = setTimeout(() => {
     alertContainer.innerHTML = '';
     inputField.disabled = false;
 

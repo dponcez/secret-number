@@ -8,11 +8,18 @@ export function startRound(){
   clearNotification();
   applyGameConfiguration();
 
-  const { inputField, levelContainer, gameContainer, footerContainer } = getHTMLRefs();
+  const { 
+    inputField, 
+    levelContainer, 
+    gameContainer, 
+    footerContainer 
+  } = getHTMLRefs();
 
   states.attempts = 0;
-  states.remainingAttempts = maximumAttempts;
-  states.secretNumber = Math.floor(Math.random() * (states.max - states.min + 1)) + states.min;
+  states.remainingAttempts = states.maximumAttempts;
+  states.secretNumber = Math.floor(
+    Math.random() * (states.max - states.min + 1)
+  ) + states.min;
 
   levelContainer.innerHTML = `
     <p class="level">nivel 
@@ -21,17 +28,17 @@ export function startRound(){
   `;
 
   gameContainer.innerHTML = `
-    <p class="info">sistema listo! He encriptado un número entre ${states.min} y
+    <p class="info">system ready! I have encrypted a number between ${states.min} and
       <span data-max>${states.max}</span>.
     </p>
     <strong class="maximum--attempts">
-      energía restante: <span data-attempts>${states.remainingAttempts}</span> intentos
+      remaining energy: <span data-attempts>${states.remainingAttempts}</span> attempts
     </strong>
   `;
 
   footerContainer.innerHTML = `
     <p class="footer--info">
-      nivel máximo alcanzado: <span data-record></span>
+      maximum level reached: <span data-record></span>
     </p>
   `;
 

@@ -69,8 +69,8 @@ describe('game controllers', () => {
     it('updates the selected difficulty and active button', () => {
       handleGameConfiguration(refs.difficultyButtons[1]);
 
-      expect(states.mainDifficulty).toBe('hard');
-      expect(states.attempts).toBe(1);
+      expect(states.mainDifficult).toBe('hard');
+      expect(states.actualLevel).toBe(1);
       expect(refs.difficultyButtons[0].classList.toggle).toHaveBeenCalledWith(
         'active',
         false,

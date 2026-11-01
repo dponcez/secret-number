@@ -15,10 +15,12 @@ export function handleGameConfiguration(button){
     return
   }
 
-  states.mainDifficulty = type;
-  states.attempts = 1;
+  states.mainDifficult = type;
+  states.actualLevel = 1;
 
-  difficultyButtons.forEach(item => item.classList.toggle('active', item === button));
+  difficultyButtons.forEach(item => {
+    item.classList.toggle('active', item === button)
+  });
 
   if(states.gameStarted){
     startRound();
