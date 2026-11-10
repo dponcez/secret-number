@@ -128,7 +128,7 @@ describe('game controllers', () => {
         '¡invalid number! Introduce a number between 1 and 50',
         '',
         '',
-        'var(--clr-gray)',
+        'neutral',
         1800,
       );
       expect(states.attempts).toBe(0);
@@ -144,7 +144,7 @@ describe('game controllers', () => {
         '¡you went too far! The secret number is lower',
         '',
         'remaining attempts: 14',
-        'var(--clr-cyan)',
+        'high',
         1800,
       );
     });
@@ -160,7 +160,7 @@ describe('game controllers', () => {
         '¡impresive!',
         '',
         "you've discovered the secret number in 1 attempts",
-        '#66bb6a',
+        'success',
         2500,
         startRound,
       );
@@ -177,6 +177,7 @@ describe('game controllers', () => {
         '¡game over!',
         'the mistery remains hidden... want to try again?',
         'the secret number was 25',
+        'danger',
         3500,
         startRound,
       );

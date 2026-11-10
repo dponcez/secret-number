@@ -9,4 +9,5 @@ export function clearNotification(){
   states.messageTimer = null;
   inputField.disabled = false;
   alertContainer.innerHTML = '';
+  alertContainer.removeAttribute('data-tone');
 }

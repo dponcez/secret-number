@@ -6,6 +6,7 @@ export const template = () => {
 
   const screen_logo = "src/assets/icons/screen-logo.svg";
   const main_logo = "src/assets/icons/main-logo.svg";
+  const toggle_on = "src/assets/icons/toggle-on.svg";
 
   const size = 75;
 
@@ -21,6 +22,12 @@ export const template = () => {
     height: size,
   };
 
+  const toggle_icon_size = {
+    url: toggle_on,
+    width: (size / 1.75),
+    height: (size / 1.75),
+  }
+
   container.innerHTML = `
     <div class="splash--screen" data-splash>
       <div class="logo">
@@ -35,6 +42,11 @@ export const template = () => {
     <main class="main">
       <div class="main--logo">
         ${loadSVGElement(main_icon_size)}
+      </div>
+      <div class="toggle--container">
+        <button class="toggle" data-dark-mode>
+          ${loadSVGElement(toggle_icon_size)}
+        </button>
       </div>
       <strong class="difficulty--info">select an initial difficulty</strong>
       <div class="hud">
@@ -57,7 +69,7 @@ export const template = () => {
         <form action="#" class="form" data-form>
           <input type="number" name="secret number" class="input--field" id="secret-number"
             placeholder="Type your number..." data-input>
-          <button type="submit" class="btn submit--btn">submit</button>
+          <button type="submit" class="btn submit--btn" data-submit>submit</button>
         </form>
         <div class="level--container" data-level>
         </div>
@@ -66,8 +78,8 @@ export const template = () => {
       </div>
       <div class="alert" data-alert>
       </div>
-      <div class="footer" data-footer>
-      </div>
+      <footer class="footer" data-footer>
+      </footer>
     </main>
   `;
 };

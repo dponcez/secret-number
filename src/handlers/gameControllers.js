@@ -48,7 +48,7 @@ export function handleSubmit(event){
       `¡invalid number! Introduce a number between ${states.min} and ${states.max}`,
       "",
       "",
-      "var(--clr-gray)",
+      "neutral",
       1800,
     );
 
@@ -68,7 +68,7 @@ export function handleSubmit(event){
       "¡impresive!",
       "",
       `you've discovered the secret number in ${states.attempts} attempts`,
-      "#66bb6a",
+      "success",
       2500,
       startRound
     );
@@ -84,6 +84,7 @@ export function handleSubmit(event){
       "¡game over!",
       "the mistery remains hidden... want to try again?",
       `the secret number was ${states.secretNumber}`,
+      "danger",
       3500,
       startRound
     );
@@ -106,7 +107,7 @@ export function handleSubmit(event){
     hint,
     "",
     `remaining attempts: ${states.remainingAttempts}`,
-    userNumber > states.secretNumber ? 'var(--clr-cyan)' : 'var(--clr-yellow)',
+    userNumber > states.secretNumber ? "high" : "low",
     1800
   )
 }

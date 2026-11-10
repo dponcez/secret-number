@@ -28,9 +28,7 @@ export function startRound(){
   `;
 
   gameContainer.innerHTML = `
-    <p class="info">system ready! I have encrypted a number between ${states.min} and
-      <span data-max>${states.max}</span>.
-    </p>
+    <p class="game--info">system ready! I have encrypted a number between ${states.min} and ${states.max}.</p>
     <strong class="maximum--attempts">
       remaining energy: <span data-attempts>${states.remainingAttempts}</span> attempts
     </strong>
