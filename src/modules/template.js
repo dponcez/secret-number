@@ -80,6 +80,11 @@ export const template = () => {
       </div>
       <footer class="footer" data-footer>
       </footer>
+      <div class="reset--game__container">
+        <button class="btn reset--game__btn" title="Reset Game" data-reset-game>
+          <i class="fa-solid fa-arrow-rotate-left arrow"></i>
+        </button>
+      </div>
     </main>
   `;
 };

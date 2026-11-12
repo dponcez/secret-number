@@ -6,34 +6,32 @@ const toggleClass = (element, classElement, isActive) =>
 
 export function handleLightMode(
   elements, 
-  switches, 
-  logos, 
-  switchSize, 
+  switchOptions, 
   light, 
   active
 ){
   const turn_on = {
-    url: switches.toggle_on,
-    width: switchSize.size / switchSize.decimal,
-    height: switchSize.size / switchSize.decimal,
+    url: switchOptions.toggle_on,
+    width: switchOptions.size / switchOptions.decimal,
+    height: switchOptions.size / switchOptions.decimal,
   };
 
   const turn_off = {
-    url: switches.toggle_off,
-    width: switchSize.size / switchSize.decimal,
-    height: switchSize.size / switchSize.decimal,
+    url: switchOptions.toggle_off,
+    width: switchOptions.size / switchOptions.decimal,
+    height: switchOptions.size / switchOptions.decimal,
   };
 
   const light_mode = {
-    url: logos.light_mode_logo,
-    width: switchSize.size,
-    height: switchSize.size
+    url: switchOptions.light_mode_logo,
+    width: switchOptions.size,
+    height: switchOptions.size
   }
 
   const dark_mode = {
-    url: logos.dark_mode_logo,
-    width: switchSize.size,
-    height: switchSize.size
+    url: switchOptions.dark_mode_logo,
+    width: switchOptions.size,
+    height: switchOptions.size
   }
 
   const updateTheme = (isLight) => {
@@ -57,7 +55,8 @@ export function handleLightMode(
       elements.diffInfo,
       elements.gameInfoContainer,
       elements.footerContainer,
-      elements.submitButton
+      elements.submitButton,
+      elements.resetGameButton
     ].forEach((element) => {
       if(element) toggleClass(element, active, isLight);
     });
