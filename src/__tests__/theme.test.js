@@ -5,7 +5,9 @@ describe('handleLightMode', () => {
     localStorage.clear();
     document.body.innerHTML = `
       <main class="main light">
+        <div class="main--logo"></div>
         <button data-dark-mode></button>
+        <button data-dif="easy"></button>
         <input class="active--color" data-input>
         <div class="hud active--color"></div>
         <strong class="difficulty--info active--color"></strong>
@@ -20,17 +22,26 @@ describe('handleLightMode', () => {
 
     const elements = {
       main: document.querySelector('.main'),
+      mainLogo: document.querySelector('.main--logo'),
       toggle: document.querySelector('[data-dark-mode]'),
       inputField: document.querySelector('[data-input]'),
       hud: document.querySelector('.hud'),
       diffInfo: document.querySelector('.difficulty--info'),
       gameInfoContainer: document.querySelector('.game--info__container'),
       footerContainer: document.querySelector('.footer'),
+      diffButtons: document.querySelectorAll('[data-dif]'),
     };
 
     handleLightMode(
       elements,
-      { toggle_on: 'on.svg', toggle_off: 'off.svg' },
+      {
+        toggle_on: 'on.svg',
+        toggle_off: 'off.svg',
+        light_mode_logo: 'light.svg',
+        dark_mode_logo: 'dark.svg',
+        size: 75,
+        decimal: 1.75,
+      },
       'light',
       'active--color',
     );

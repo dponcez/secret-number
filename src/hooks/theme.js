@@ -6,32 +6,32 @@ const toggleClass = (element, classElement, isActive) =>
 
 export function handleLightMode(
   elements, 
-  switchOptions, 
+  options, 
   light, 
   active
 ){
   const turn_on = {
-    url: switchOptions.toggle_on,
-    width: switchOptions.size / switchOptions.decimal,
-    height: switchOptions.size / switchOptions.decimal,
+    url: options.toggle_on,
+    width: options.size / options.decimal,
+    height: options.size / options.decimal,
   };
 
   const turn_off = {
-    url: switchOptions.toggle_off,
-    width: switchOptions.size / switchOptions.decimal,
-    height: switchOptions.size / switchOptions.decimal,
+    url: options.toggle_off,
+    width: options.size / options.decimal,
+    height: options.size / options.decimal,
   };
 
   const light_mode = {
-    url: switchOptions.light_mode_logo,
-    width: switchOptions.size,
-    height: switchOptions.size
+    url: options.light_mode_logo,
+    width: options.size,
+    height: options.size
   }
 
   const dark_mode = {
-    url: switchOptions.dark_mode_logo,
-    width: switchOptions.size,
-    height: switchOptions.size
+    url: options.dark_mode_logo,
+    width: options.size,
+    height: options.size
   }
 
   const updateTheme = (isLight) => {

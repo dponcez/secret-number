@@ -6,6 +6,7 @@ import { log, selector } from '_fns/custom_functions.js';
 import { startRound } from 'modules/startRound.js';
 import { showToastNotification } from 'ui/showToastNotification.js';
 import { savedLevelReached } from 'hooks/storage.js';
+import { lanchConfetti } from 'utils/confetti.js';
 
 jest.mock('_fns/custom_functions.js', () => ({
   log: jest.fn(),
@@ -26,6 +27,10 @@ jest.mock('ui/showToastNotification.js', () => ({
 
 jest.mock('hooks/storage.js', () => ({
   savedLevelReached: jest.fn(),
+}));
+
+jest.mock('utils/confetti.js', () => ({
+  lanchConfetti: jest.fn(),
 }));
 
 const createRefs = () => {
@@ -164,6 +169,7 @@ describe('game controllers', () => {
         2500,
         startRound,
       );
+      expect(lanchConfetti).toHaveBeenCalledWith(300);
     });
 
     it('ends the game when the last attempt is used', () => {

@@ -5,6 +5,7 @@ import { startRound } from 'modules/startRound.js';
 import { gameConfiguration } from 'helpers/gameConfiguration.js';
 import { showToastNotification } from 'ui/showToastNotification.js';
 import { savedLevelReached } from 'hooks/storage.js';
+import { lanchConfetti } from 'utils/confetti.js';
 
 export function handleGameConfiguration(button){
   const { difficultyButtons } = getHTMLRefs();
@@ -31,6 +32,7 @@ export function handleSubmit(event){
   event.preventDefault();
 
   const { inputField } = getHTMLRefs();
+  let timeout = 300;
 
   if(!states.gameStarted || inputField.disabled) return;
 
@@ -72,6 +74,8 @@ export function handleSubmit(event){
       2500,
       startRound
     );
+
+    lanchConfetti(timeout);
 
     return
   }

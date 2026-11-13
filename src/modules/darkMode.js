@@ -2,10 +2,10 @@ import { selector, selectorAll } from "_fns/custom_functions.js";
 import { handleLightMode } from 'hooks/theme.js';
 
 export function loadDarkMode(){
-  const toggle_on = "/src/assets/icons/toggle-on.svg";
-  const toggle_off = "/src/assets/icons/toggle-off.svg";
-  const light_mode_logo = "/src/assets/icons/light-mode-logo.svg";
-  const dark_mode_logo = "/src/assets/icons/main-logo.svg";
+  const toggle_on = "./src/assets/icons/toggle-on.svg";
+  const toggle_off = "./src/assets/icons/toggle-off.svg";
+  const light_mode_logo = "./src/assets/icons/light-mode-logo.svg";
+  const dark_mode_logo = "./src/assets/icons/main-logo.svg";
 
   const elements = {
     main: selector(".main"),
@@ -21,7 +21,7 @@ export function loadDarkMode(){
     resetGameButton: selector("[data-reset-game]"),
   };
 
-  const switchOptions = {
+  const options = {
     size: 75,
     decimal: 1.75,
     toggle_on,
@@ -32,7 +32,7 @@ export function loadDarkMode(){
 
   handleLightMode(
     elements,
-    switchOptions,
+    options,
     "light",
     "active--color",
   );

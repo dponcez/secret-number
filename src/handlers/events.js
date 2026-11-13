@@ -7,6 +7,7 @@ import { startRound } from "modules/startRound.js";
 import { getHTMLRefs } from "variables/globals.js";
 import { states } from "variables/constants.js";
 import { debounce } from "utils/debounce.js";
+import { clearNotification } from "ui/clearNotification.js";
 
 export function setupEvents(){
   const { 
@@ -15,6 +16,8 @@ export function setupEvents(){
     form, 
     startGameBtn 
   } = getHTMLRefs();
+
+  const resetGameBtn = selector('[data-reset-game]');
   
   function startGame() {
     states.gameStarted = true;
@@ -36,6 +39,17 @@ export function setupEvents(){
   
     startGame();
   });
+
+  handler(resetGameBtn, 'click', debounce(() => {
+    clearNotification();
+
+    states.gameStarted = true;
+    states.actualLevel = 1;
+    states.maxLevelReached = 1;
+    localStorage.removeItem('max-level-reached');
+
+    startRound();
+  }, 300))
   
   handler(form, "submit", handleSubmit);
 }
