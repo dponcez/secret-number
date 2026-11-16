@@ -10,4 +10,9 @@ export const states = {
   maxLevelReached: 1,
   gameStarted: false,
   messageTimer: null,
+  roundActive: false,
+  roundStartAt: 0,
+  roundTimerId: null,
+  totalScore: 0,
+  lastRoundResult: null
 };
